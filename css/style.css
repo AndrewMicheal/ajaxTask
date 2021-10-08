@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.buttons {
+    background-color: rgb(13, 13, 34);
+}
+
+.btn {
+    padding: 20px;
+    border-radius: 10px;
+    width: 150px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    background-color: rgba(30, 30, 104 , 0.6);
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    margin-right: 1rem;
+}
+
+.btn.active , .btn.active:hover {
+    background-color: rgb(209, 66, 66);
+    color: #fff;
+}
+
+.btn:hover {
+    background-color: coral;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.container ul {
+    margin-top: 3rem;
+}
+
+.container ul li {
+    margin-bottom: 5px;
+}
+
+.btns {
+    padding-top: 1rem;
+}

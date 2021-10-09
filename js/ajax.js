@@ -26,21 +26,24 @@ function showButtons(usersName) {
 function getUserPost(btn) {
     var userId = btn.getAttribute("id");
     var xhttp = new XMLHttpRequest();
-    xhttp.open("GET",`https://jsonplaceholder.typicode.com/posts/${userId}`);
+    xhttp.open("GET",`https://jsonplaceholder.typicode.com/posts?userId=${userId}`);
     xhttp.send();
     xhttp.onreadystatechange = function() {
         if(this.status == 200 && this.readyState == 4) {
-            var userPost = JSON.parse(this.responseText);
-            displayUserPost(userPost);
+            var userPosts = JSON.parse(this.responseText);
+            displayUserPosts(userPosts);
             btnActive(btn);
         }
     }
 }
 
-function displayUserPost(userPost) {
+function displayUserPosts(userPost) {
     var userTitle = document.getElementById("userTitle");
-    var liContainer = `<li>${userPost.body}</li>`;
-    userTitle.innerHTML = liContainer; 
+    var lis = ``;
+    for(var i = 0; i < userPost.length; i++) {
+        lis += `<li>${userPost[i].body}</li>`
+    }
+    userTitle.innerHTML = lis; 
 }
 
 function btnActive(button) {
